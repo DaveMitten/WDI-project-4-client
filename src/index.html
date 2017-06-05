@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="project4">
   <head>
     <meta charset="utf-8">
     <title>project 4</title>
+    <base href="/">
+
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
-  <body>
+  <nav class="dt w-100 border-box pa3 ph5-ns">
+    <a class="dtc v-mid mid-gray link dim w-25" ui-sref="home" title="Home">
+      <img src="http://tachyons.io/img/logo.jpg" class="dib w2 h2 br-100" alt="Site Name">
+    </a>
+    <div class="dtc v-mid w-75 tr">
+      <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="login" title="About">Login</a>
+      <a class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="register" title="Store">Register</a>
+      <!-- <a class="link dim dark-gray f6 f5-ns dib" href="#" title="Contact">Join Us</a> -->
+    </div>
+  </nav>
+<main class="container" ui-view></main>
   </body>
 </html>

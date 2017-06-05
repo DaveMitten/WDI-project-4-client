@@ -14,12 +14,11 @@ function TokenService($window, jwtHelper) {
     return $window.localStorage.getItem('auth-token');
   };
 
-  self.removeToken = () => {
-    $window.localStorage.clear();
-  };
-
   self.decodeToken = () => {
     const token = self.getToken();
     return token ? jwtHelper.decodeToken(token) : null;
+  };
+  self.removeToken = () => {
+    $window.localStorage.clear();
   };
 }

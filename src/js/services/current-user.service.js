@@ -1,6 +1,6 @@
 angular
-  .module('angularAuthentication')
-  .service('CurrentUserService', CurrentUserService);
+.module('project4')
+.service('CurrentUserService', CurrentUserService);
 
 CurrentUserService.$inject = ['TokenService', '$rootScope', 'User'];
 function CurrentUserService(TokenService, $rootScope, User) {
@@ -10,11 +10,11 @@ function CurrentUserService(TokenService, $rootScope, User) {
     const decoded = TokenService.decodeToken();
     if (decoded) {
       User
-        .get({ id: decoded.id }).$promise
-        .then(data => {
-          self.currentUser = data;
-          $rootScope.$broadcast('loggedIn');
-        });
+      .get({ id: decoded.id }).$promise
+      .then(data => {
+        self.currentUser = data;
+        $rootScope.$broadcast('loggedIn');
+      });
     }
   };
 
@@ -23,3 +23,6 @@ function CurrentUserService(TokenService, $rootScope, User) {
     TokenService.removeToken();
     $rootScope.$broadcast('loggedOut');
   };
+
+  self.getUser();
+}

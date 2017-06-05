@@ -1,5 +1,5 @@
 angular
-  .module('angularAuthentication')
+  .module('project4')
   .config(Interceptor);
 
 Interceptor.$inject = ['$httpProvider'];
