@@ -13,14 +13,15 @@
     <!-- endinject -->
   </head>
 <body ng-controller="MainCtrl as main">
-  <nav class="dt w-100 border-box pa3 ph5-ns">
-    <a class="dtc v-mid mid-gray link dim w-25" ui-sref="home" title="Home">
+  <nav class="dt w-100 border-box pa3 ph5-ns black bg-light-purple">
+    <a class="dtc v-mid mid-gray link dim w-25" ui-sref="questionsIndex" title="Home">
       <img src="http://tachyons.io/img/logo.jpg" class="dib w2 h2 br-100" alt="Site Name">
     </a>
     <div class="dtc v-mid w-75 tr">
       <a ng-hide="main.user" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="login">Login</a>
       <a ng-hide="main.user" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="register">Register</a>
-      <a ng-show="main.user" class="link dim dark-gray f6 f5-ns dib" ui-sref="usersIndex">Users</a>
+      <a ng-show="main.user" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="questionsIndex">Discuss</a>
+      <a ng-show="main.user" class="link dim dark-gray f6 f5-ns dib mr3 mr4-ns" ui-sref="usersIndex">Users</a>
       <a ng-show="main.user" class="link dim dark-gray f6 f5-ns dib" ng-click="main.logout()">Logout</a>
     </div>
   </nav>

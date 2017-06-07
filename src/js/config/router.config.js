@@ -11,24 +11,32 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     url: '/',
     templateUrl: '/js/views/home.html'
   })
+  .state('questionsIndex', {
+    url: '/questions',
+    templateUrl: '/js/views/questions/question.index.html',
+    controller: 'QuestionsIndexCtrl as vm'
+  })
   .state('register', {
     url: '/register',
     templateUrl: '/js/views/register.html',
-    controller: 'RegisterCtrl',
-    controllerAs: 'register'
+    controller: 'RegisterCtrl as register'
   })
   .state('login', {
     url: '/login',
     templateUrl: '/js/views/login.html',
-    controller: 'LoginCtrl',
-    controllerAs: 'login'
+    controller: 'LoginCtrl as login'
   })
   .state('usersIndex', {
     url: '/users',
     templateUrl: '/js/views/users/index.html',
-    controller: 'UsersIndexCtrl',
-    controllerAs: 'usersIndex'
+    controller: 'UsersIndexCtrl as usersIndex'
+  })
+  .state('questionsShow', {
+    url: '/questions/:id',
+    templateUrl: '/js/views/questions/question.show.html',
+    controller: 'QuestionsShowCtrl as questionsShow'
   });
+
 
   $urlRouterProvider.otherwise('/');
 }

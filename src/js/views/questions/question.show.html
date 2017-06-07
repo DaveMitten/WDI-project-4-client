@@ -1,0 +1,5 @@
+<h1>{{questionsShow.question.title}}</h1>
+<div class="black bg-light-purple"ng-repeat="comment in questionsShow.question.comments">
+{{comment.body}} {{comment.user_id}}
+{{comment.user.first_name}}
+</div>
