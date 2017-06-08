@@ -38,9 +38,15 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
   })
 
   .state('questionsNew', {
-    url: '/questions',
+    url: '/questionsNew',
     templateUrl: '/js/views/questions/question.new.html',
     controller: 'QuestionsNewCtrl as questionsNew'
+  })
+
+  .state('commentsNew', {
+    url: '/commentsNew',
+    templateUrl: '/js/views/comments/comment.new.html',
+    controller: 'CommentsNewCtrl as commentsNew'
   });
 
 
