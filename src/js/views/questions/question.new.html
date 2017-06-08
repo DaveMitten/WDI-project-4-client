@@ -1,0 +1,18 @@
+<main class="pa4 black-80">
+  <form ng-submit="questionsNew.questionsCreate()" class="measure center">
+    <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+      <legend class="f4 fw6 ph0 mh0">What's your question?</legend>
+      <div class="mt3">
+        <label class="db fw6 lh-copy f6" for="question">Question...</label>
+        <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" ng-model="questionsNew.newQuestion.title" type="text" name="question"  id="email-address">
+      </div>
+      <div class="mv3">
+        <label class="db fw6 lh-copy f6" for="tags">Tags...</label>
+        <input class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" ng-model="questionsNew.newQuestion.tags" type="text" name="tags"  id="password">
+      </div>
+      </fieldset>
+    <div class="">
+      <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Ask question?">
+    </div>
+  </form>
+</main>
