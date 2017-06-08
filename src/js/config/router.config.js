@@ -36,17 +36,10 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/questions/question.show.html',
     controller: 'QuestionsShowCtrl as questionsShow'
   })
-
   .state('questionsNew', {
     url: '/questionsNew',
     templateUrl: '/js/views/questions/question.new.html',
     controller: 'QuestionsNewCtrl as questionsNew'
-  })
-
-  .state('commentsNew', {
-    url: '/commentsNew',
-    templateUrl: '/js/views/comments/comment.new.html',
-    controller: 'CommentsNewCtrl as commentsNew'
   });
 
 

@@ -1,5 +1,24 @@
-<h1>{{questionsShow.question.title}}</h1>
-<div class="black bg-light-purple"ng-repeat="comment in questionsShow.question.comments">
-{{comment.body}} {{comment.user_id}}
-{{comment.user.first_name}}
+<div class="roboto">
+
+  <h1>{{questionsShow.question.title}}</h1>
+
+  <div class="helvetica pa4 black-80">
+    <form ng-submit="questionsShow.commentsCreate()" class="measure center">
+      <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
+        <legend class="f4 fw6 ph0 mh0">What's your comment?</legend>
+        <div class="mt3">
+          <label class="db fw6 lh-copy f6" for="comment">Comment...</label>
+          <input class="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" ng-model="questionsShow.newComment.body" type="text" name="comment"  id="email-address">
+        </div>
+      </fieldset>
+      <div class="">
+        <input class="no-underline b ma2 ph3 pv2 input-reset ba b--purple purple bg-transparent grow pointer f6 dib" type="submit" value="Give us your view!">
+      </div>
+    </form>
+  </div>
+
+  <div class="black bg-light-purple"ng-repeat="comment in questionsShow.question.comments track by $index">
+    {{comment.body}}
+    {{comment.user.first_name}}
+  </div>
 </div>

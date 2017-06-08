@@ -3,19 +3,31 @@ angular
   .controller('QuestionsShowCtrl', QuestionsShowCtrl);
 
 QuestionsShowCtrl.$inject =
-  ['API', '$stateParams', 'Question', '$http', 'User'];
+  ['$stateParams', 'Question', 'User', 'Comment'];
 
-function QuestionsShowCtrl(API, $stateParams, Question, $http, User) {
+function QuestionsShowCtrl($stateParams, Question, User, Comment) {
   const vm = this;
-  console.log($stateParams.id);
-  $http({
-    method: 'GET',
-    url: `${API}/questions/${$stateParams.id}`
-  }).then(function successCallback(response) {
-    console.log(response.data);
-    vm.question = response.data;
-    vm.question.comments.forEach(comment => {
-      comment.user = User.get({id: comment.user_id});
-    });
-  });
+  getQuestion();
+
+  vm.newComment = {
+    question_id: $stateParams.id
+  };
+
+  vm.commentsCreate = commentsCreate;
+
+  function commentsCreate(){
+    return Comment
+      .save(vm.newComment)
+      .$promise
+      .then(() => {
+        vm.newComment = {
+          question_id: $stateParams.id
+        };
+        getQuestion();
+      });
+  }
+
+  function getQuestion() {
+    vm.question = Question.get({ id: $stateParams.id });
+  }
 }
