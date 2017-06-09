@@ -1,6 +1,7 @@
-<h1>Users</h1>
-<ul>
-  <li ng-repeat="user in usersIndex.users track by $index">
-  {{user.username}}
-  </li>
-</ul>
+<h4 class="pa4 helvetica f1 ttu tracked mt0">Users</h4>
+
+
+
+<ul class="list ph3 ph5-ns pv4">
+  <li ng-repeat="user in usersIndex.users track by $index" class="dib mr1 mb2">
+    <a href="#" class="f3 f5-ns b db pa6 link dim dark-gray ba b--black">  {{user.username}}</a></li>

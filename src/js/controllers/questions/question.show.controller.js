@@ -3,9 +3,9 @@ angular
   .controller('QuestionsShowCtrl', QuestionsShowCtrl);
 
 QuestionsShowCtrl.$inject =
-  ['$stateParams', 'Question', 'User', 'Comment'];
+  ['$stateParams', 'Question', 'User', 'Comment', '$state', '$timeout'];
 
-function QuestionsShowCtrl($stateParams, Question, User, Comment) {
+function QuestionsShowCtrl($stateParams, Question, User, Comment, $state, $timeout) {
   const vm = this;
   getQuestion();
 
@@ -26,6 +26,14 @@ function QuestionsShowCtrl($stateParams, Question, User, Comment) {
         getQuestion();
       });
   }
+
+  vm.commentsDelete = function(id) {
+    console.log(id);
+    console.log($stateParams.id);
+    Comment.delete({id: id})
+    .$promise
+    .then(window.location.reload());
+  };
 
   function getQuestion() {
     vm.question = Question.get({ id: $stateParams.id });
