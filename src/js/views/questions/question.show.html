@@ -1,8 +1,20 @@
-<div class="roboto">
+<div class="helvetica vh-100">
 
-  <h1>{{questionsShow.question.title}}</h1>
+  <h1 class="pb5 pl2">{{questionsShow.question.title}}</h1>
+  <ul class="list pl2">
 
-  <div class="helvetica pa4 black-80">
+  <li class="bt b--light-pink pa1 pa1-ns  fw4" ng-repeat="comment in questionsShow.question.comments track by $index">
+     <b class="db f3 mb1 " >
+       {{comment.user.first_name}}
+
+     </b>
+     <span class="f5 db lh-copy measure">
+       {{comment.body}}
+     </span>
+   </li>
+ </ul>
+
+<div class="pa4 black">
     <form ng-submit="questionsShow.commentsCreate()" class="measure center">
       <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
         <legend class="f4 fw6 ph0 mh0">What's your comment?</legend>
@@ -15,10 +27,5 @@
         <input class="no-underline b ma2 ph3 pv2 input-reset ba b--purple purple bg-transparent grow pointer f6 dib" type="submit" value="Give us your view!">
       </div>
     </form>
-  </div>
-
-  <div class="black bg-light-purple"ng-repeat="comment in questionsShow.question.comments track by $index">
-    {{comment.body}}
-    {{comment.user.first_name}}
   </div>
 </div>

@@ -1,16 +1,11 @@
-<main class="helvetica cf w-100">
-  <div class="mw9 center ph3-ns">
-    <div   class="cf ph2-ns">
-      <ul ng-repeat= "question in vm.questions"class="list fl w-100 w-25-ns pa2">
-        <li class="outline bg-white pv4">
-          <question data="question"></question>
-        </li>
-      </ul>
-    </div>
 
-  </div>
+<main class="relative helvetica bg--white">
 
+
+<ul class="list ph3 ph5-ns pv4">
+  <li ng-repeat= "question in vm.questions" class="dib mr1 mb2"><a href="#" class=" b db pa4 link  black ba b--black-20"><question data="question"></question></a></li>
 </main>
+
 
 
 <!-- <div class="mw9 center ph3-ns">
