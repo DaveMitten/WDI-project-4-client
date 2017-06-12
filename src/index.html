@@ -8,6 +8,7 @@
   <base href="/">
 
   <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css">.
 
   <!-- inject:js -->
   <!-- endinject -->
@@ -18,8 +19,8 @@
   <nav class="dt w-100 border-box pa2 ph5-ns white bb b--white bw1  bg-light-purple">
     <div class="pa0 tc">
       <a class="dtc v-mid white link dim " ui-sref="home" title="Home">
-        <img src="/images/daveLogo.jpg" class="br2 h2 w2 dib" alt="Reaction">
-        Reaction
+          <img src="/images/question_background.png" class="br2 h3 w3 dib" alt="Reaction">
+
       </a>
     </div>
     <div class="dtc v-mid w-75 tr white">
@@ -31,8 +32,8 @@
       <a ng-show="main.user" class=" white link dim f7 f5-ns dib" ng-click="main.logout()">Logout</a>
     </div>
   </nav>
-  <main class="container vh-100" ui-view></main>
-  <footer class="container pa1 pa1-l white bt b--black-20  bw1 bg-light-pink">
+  <main class="background container vh-100" ui-view></main>
+  <footer class="footer   pa1 pa1-l white bt b--black-20  bw1 bg-light-pink">
   <div class="dt dt--fixed w-100" >
     <div class="dn dtc-ns v-mid">
       <p class="f7  dib pr3 mb3">
