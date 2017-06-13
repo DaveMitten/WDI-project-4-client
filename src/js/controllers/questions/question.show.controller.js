@@ -1,11 +1,11 @@
 angular
-  .module('project4')
-  .controller('QuestionsShowCtrl', QuestionsShowCtrl);
+.module('project4')
+.controller('QuestionsShowCtrl', QuestionsShowCtrl);
 
 QuestionsShowCtrl.$inject =
-  ['$stateParams', 'Question', 'User', 'Comment', '$state', '$timeout'];
+['$stateParams', 'Question', 'User', 'Comment', '$state'];
 
-function QuestionsShowCtrl($stateParams, Question, User, Comment, $state, $timeout) {
+function QuestionsShowCtrl($stateParams, Question, User, Comment, $state) {
   const vm = this;
   getQuestion();
 
@@ -17,15 +17,27 @@ function QuestionsShowCtrl($stateParams, Question, User, Comment, $state, $timeo
 
   function commentsCreate(){
     return Comment
-      .save(vm.newComment)
-      .$promise
-      .then(() => {
-        vm.newComment = {
-          question_id: $stateParams.id
-        };
-        getQuestion();
-      });
+    .save(vm.newComment)
+    .$promise
+    .then(() => {
+      vm.newComment = {
+        question_id: $stateParams.id
+      };
+      getQuestion();
+    });
   }
+
+  vm.questionsDelete = function(id) {
+    console.log(id);
+    console.log($stateParams.id);
+    Question.delete({id: $stateParams.id})
+    .$promise
+    .then(() => {
+      $state.go('questionsIndex');
+      $state.reload();
+    }
+  );
+  };
 
   vm.commentsDelete = function(id) {
     console.log(id);
